@@ -2,7 +2,9 @@
 What is UrlToys?
 
 UrlToys is a tool that will crawl webpages to gather a collection of urls
+
 Have you ever visited a website and didn't have time to click every download link on the page?
+
 Use this tool to your advantage
 
 ### Full list of commands are as follows
