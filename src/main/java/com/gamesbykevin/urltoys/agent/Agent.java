@@ -50,8 +50,14 @@ public class Agent extends Thread {
                 //determine which command was entered
                 if (text.startsWith(COMMAND_GET)) {
 
+                    //the directory
+                    String directory = SAVE_DIR + "\\" + getRandomDirectoryName();
+
+                    //first save the list of links to a text file
+                    save(directory);
+
                     //download all files one by one to a new directory
-                    get(SAVE_DIR + "\\" + getRandomDirectoryName());
+                    get(directory);
 
                 } else if (text.startsWith(COMMAND_KEEP)) {
 
@@ -175,7 +181,7 @@ public class Agent extends Thread {
             createDirectory(saveDir);
 
             //create our file list
-            FileWriter writer = new FileWriter(saveDir + "\\output.txt");
+            FileWriter writer = new FileWriter(saveDir + "\\list_" + System.nanoTime() + ".txt");
 
             //write every link to the file one line per item
             for (String str : getList()) {
